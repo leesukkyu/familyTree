@@ -1,0 +1,17 @@
+.horizon-line{
+    top: -12px;
+    right: 54px;
+    position: absolute;
+    width: 120px;
+    height: 12px;
+    background: url(../image/horizon.png);
+}
+.vertical-line{
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    height: 20px;
+    top: -21px;
+    background: #29786a;
+    left: 54px;
+}
