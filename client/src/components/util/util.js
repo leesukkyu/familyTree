@@ -11,7 +11,7 @@ class _Date {
                     return this.toString().zf(len)
                 };
                 Date.prototype.format = function (f) {
-                    var weekName, d, h
+                    let weekName, d, h
                     if (!this.valueOf()) return ''
                     weekName = ['일', '월', '화', '수', '목', '금', '토']
                     d = this, h = -1
@@ -53,7 +53,7 @@ class _Date {
     }
 
     lastMonth() {
-        var lastDayOfLastMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
+        let lastDayOfLastMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
         if (this.date.getDate() > lastDayOfLastMonth) {
             this.date.setDate(lastDayOfLastMonth);
         }
@@ -62,7 +62,7 @@ class _Date {
     }
 
     lastWeek() {
-        var date = this.date.getDate();
+        let date = this.date.getDate();
         this.date.setDate(date - 7);
         return this;
     }

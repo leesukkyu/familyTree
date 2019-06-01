@@ -163,7 +163,7 @@ export default {
     },
     // 전체 족보 리스트를 조회합니다.
     loadPedigreeList() {
-      var pedigreeList = [
+      let pedigreeList = [
         {
           header: "조회할 족보를 선택하세요."
         }
@@ -172,7 +172,7 @@ export default {
         .post("/api/load_pedigree_list", {})
         .then(rs => {
           console.log(rs.pedigreeList);
-          for (var i in rs.pedigreeList) {
+          for (let i in rs.pedigreeList) {
             if (i != 0) {
               pedigreeList.push({ divider: true, inset: true });
             }
@@ -209,11 +209,11 @@ export default {
     },
     onClickDeleteBtn: function(obj) {
       if(confirm('정말 삭제하시겠습니까?')){
-        var rq = {
+        let rq = {
           _id: obj._id
         };
         this.$http.post("/api/delete_pedigree", rq).then(rs => {
-          var index = this.pedigreeList.indexOf(obj);
+          let index = this.pedigreeList.indexOf(obj);
           this.pedigreeList.splice(index, 1);
           this.$store.dispatch("openSnackbar", {msg : '삭제되었습니다.'});
           this.dialog = false;

@@ -3,7 +3,7 @@ import axios from 'axios'
 import querystring from 'query-string'
 import store from '../vuex/store'
 
-var ajaxCount = 0;
+let ajaxCount = 0;
 
 Vue.prototype.$http = axios.create({
   // 기본 API URL

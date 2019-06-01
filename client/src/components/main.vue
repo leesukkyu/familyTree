@@ -572,15 +572,15 @@ export default {
           }
         })
         .then(rs => {
-          var id_child_list;
+          let id_child_list;
           this.personlist = [];
           console.log(rs.personList);
-          for (var i = 0; i < 10; i++) {
+          for (let i = 0; i < 10; i++) {
             this.personlist[i] = [];
           }
           if (rs.personList) {
             // 1. 돌면서 map을 만들고 this.personlist에 세대 순으로 넣는다.
-            for (var i in rs.personList) {
+            for (let i in rs.personList) {
               if (rs.personList[i].birth_timestamp) {
                 rs.personList[i].birth_date = new this.$util._Date(
                   rs.personList[i].birth_timestamp
@@ -599,13 +599,13 @@ export default {
               ].push(rs.personList[i]);
             }
             // 2. childItemList를 만들어 준다.
-            for (var i in rs.personList) {
+            for (let i in rs.personList) {
               
               id_child_list = rs.personList[i].id_child_list;
 
               if (id_child_list && id_child_list.length) {
                 rs.personList[i].childItemList = [];
-                for (var j in id_child_list) {
+                for (let j in id_child_list) {
                   rs.personList[i].childItemList[j] = this.personMap[
                     id_child_list[j]
                   ];
